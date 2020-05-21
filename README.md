@@ -1,0 +1,1 @@
+test POC of json schema genration from Go structs

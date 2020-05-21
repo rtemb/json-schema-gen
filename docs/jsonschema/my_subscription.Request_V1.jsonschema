@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "required": [
+    "timestamp",
+    "event_id",
+    "payload"
+  ],
+  "properties": {
+    "timestamp": {
+      "type": "integer"
+    },
+    "event_id": {
+      "type": "string",
+      "examples": [
+        "qweqwe-12314"
+      ]
+    },
+    "payload": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "$ref": "#/definitions/Payload_V1"
+    }
+  },
+  "additionalProperties": false,
+  "type": "object",
+  "definitions": {
+    "Payload_V1": {
+      "required": [
+        "name",
+        "event_id"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "event_id": {
+          "type": "string",
+          "title": "the name",
+          "description": "The name of a friend",
+          "default": "alex",
+          "examples": [
+            "joe",
+            "lucy"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "type": "object"
+    }
+  }
+}
